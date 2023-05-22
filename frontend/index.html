@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task manager</title>
+    <meta
+      name="description"
+      content="Un gestionnaire de tâches, pour vous aider au quotidien"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
+    <script src="js/taskDisplay.js" defer></script>
+    <script src="js/taskCRUD.js" defer></script>
+    <script src="js/categoryDisplay.js" defer></script>
+    <script src="js/categoryCRUD.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Task manager</h1>
+    </header>
+
+    <main>
+      <div class="create-task-container">
+        <button>Nouvelle tâche</button>
+      </div>
+
+      <div class="message success" hidden>
+        la nouvelle tâche a bien été ajoutée
+      </div>
+      <div class="message danger" hidden>
+        oops, impossible de sauvegarder la tâche
+      </div>
+
+      <ul class="tasklist">
+        <!-- Exemple:
+          <li data-id="0">
+          <p>sortir les poubelles</p>
+          <div class="delete"></div>
+          <div class="edit"></div>
+          </li> -->
+      </ul>
+
+      <div class="modal-dialog">
+        <form>
+          <div class="close-form"></div>
+          <h2>Nouvelle tâche</h2>
+          <label for="task-title" class="screen-reader-only"
+            >titre de la tâche</label
+          >
+          <input
+            name="title"
+            id="task-title"
+            placeholder="titre de la tâche..."
+            type="text"
+            required
+          />
+          <label for="category" class="screen-reader-only">Categorie</label>
+          <select
+            class="form__select-category"
+            id="category"
+            name="category_id"
+          >
+            <option value="">Categorie de la tache...</option>
+          </select>
+          <button>ajouter</button>
+        </form>
+      </div>
+
+      <div class="modal-edit-form">
+        <form class="task-edit-form">
+          <div class="close-form"></div>
+          <h2>Modifier une tache</h2>
+          <label for="title_edit" class="screen-reader-only"
+            >Titre de la tache</label
+          >
+          <input
+            type="text"
+            id="title_edit"
+            class="task-edit-form__title"
+            name="title"
+            required
+          />
+          <select
+            class="task-edit-form__category"
+            id="category"
+            name="category_id"
+          >
+            <option value="">Categorie de la tache...</option>
+          </select>
+          <input type="hidden" name="id" class="task-edit-form__id" />
+          <button type="submit">Modifier</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
