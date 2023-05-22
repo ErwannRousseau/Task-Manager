@@ -56,7 +56,6 @@ Note: Assurez-vous que votre base de données est en cours d'exécution sur le p
 5. Dans le terminal exécutez :
 
 ```bash
-cd backend/
 php artisan key:generate
 php artisan migrate
 ```
@@ -67,10 +66,9 @@ Cela va créer les base de données requisent au bon fonctionnement de l'applica
 
 ## Utilisation
 
-Dans un nouveau terminal, exécutez en ligne de commande :
+Dans le même terminal, exécutez:
 
 ```bash
-cd backend/
 php artisan serve --port=8001
 ```
 
